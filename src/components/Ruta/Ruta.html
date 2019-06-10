@@ -1,0 +1,8 @@
+<div class="content-ruta">
+    <div class="container-icon" [ngClass]="{'container-icon-activo': activo ? true:false}">
+        <ion-icon [name]=" activo ? 'radio-button-on' : 'radio-button-off'">
+        </ion-icon>
+        <span class="linea-ruta" [ngClass]="{'linea-ruta-activa': activo && ruta.posicion != posicionDestino ? true:false}"></span>
+    </div>
+    <span>{{ruta.nombre}}</span>
+</div>

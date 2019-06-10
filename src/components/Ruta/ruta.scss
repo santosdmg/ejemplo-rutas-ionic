@@ -1,0 +1,31 @@
+.content-ruta {
+    display       : flex;
+    flex-direction: row;
+    align-items   : center;
+    padding       : 8px 0;
+}
+
+.container-icon {
+    position      : relative;
+    display       : flex;
+    flex-direction: column;
+    padding-right : 5px;
+    color         : #888888;
+    align-items   : center;
+}
+.container-icon-activo {
+    color: #43a047;
+}
+
+.linea-ruta {
+    position        : absolute;
+    width           : 3px;
+    height          : 30px;
+    top             : 14px;
+    height          : 20px;
+    background-color: #888;
+}
+
+.linea-ruta-activa {
+    background-color: #43a047;
+}

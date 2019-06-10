@@ -1,14 +1,25 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar color="primary">
+        <ion-title>
+            <div class="container-seleccion-destino">
+                <div class="content-input-destino">
+                    <div class="input-destinos" (click)="irBuscarRuta('origen')">
+                        {{origen  ? origen.nombre : "Ruta origen"}}
+                    </div>
+                    <div class="input-destinos" (click)="irBuscarRuta('destino')">
+                        {{destino  ? destino.nombre : "Ruta destino"}}
+                    </div>
+                </div>
+                <div class="content-icon" (click)="cambioDireccion()">
+                    <ion-icon class="icon-seleccion-ruta" [ngClass]="{'icon-normal': direccion=='normal', 'icon-inversa': direccion == 'invertir'}" name="swap"></ion-icon>
+                </div>
+            </div>
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <b>Destino</b>
+    <component-ruta *ngFor="let ruta of rutas" class="container-ruta" [ruta]="ruta"
+        [activo]="ruta.activa" [destino]="destino"></component-ruta>
 </ion-content>

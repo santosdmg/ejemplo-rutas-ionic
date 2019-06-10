@@ -1,0 +1,16 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-searchbar #searchInput (input)="getItems($event)" [placeholder]="'Buscar '+tipo"></ion-searchbar>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item class="search-items" *ngFor="let item of items" (click)=" item.activo && selectItem(item)" [ngClass]="{'ruta-deshabilitado': !item.activo}">
+            {{ item.nombre }}
+            <ion-icon name="radio-button-on" *ngIf="item.posicion == posicionIni || item.posicion == posicionFin ? true : false"></ion-icon>
+            <!-- <ion-icon name="radio-button-off" *ngIf="item.posicion == posicionIni ? true : false"></ion-icon>
+            <ion-icon name="radio-button-on" *ngIf="item.posicion == posicionFin ? true : false"></ion-icon> -->
+        </ion-item>
+    </ion-list>
+</ion-content>
